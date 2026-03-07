@@ -235,7 +235,7 @@ nixInfo.lze.load {
     load = function(_name)
       -- schedule so it runs after VimEnter
       vim.schedule(function()
-        vim.cmd.colorscheme(nixInfo( "catppuccin", "settings", "colorscheme"))
+        vim.cmd.colorscheme(nixInfo( "rose-pine", "settings", "colorscheme"))
         vim.schedule(function()
           -- I like this color. Use vim.schedule again to set it after the colorscheme is finished
           vim.cmd([[hi LineNr guifg=#bb9af7]])
@@ -260,6 +260,11 @@ nixInfo.lze.load {
     "catppuccin-nvim",
     auto_enable = true,
     colorscheme = "catppuccin",
+  },
+  {
+    "rose-pine",
+    auto_enable = true,
+    colorscheme = "rose-pine",
   },
     {
     "snacks.nvim",
