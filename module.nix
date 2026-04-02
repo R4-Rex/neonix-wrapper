@@ -116,7 +116,15 @@ inputs:
       stylua
     ];
   };
-
+  config.specs.python = {
+    data = null;
+    extraPackages = with pkgs; [
+      pyright
+      black
+      python3Packages.isort
+      python3Packages.flake8
+    ];
+  };
   config.specs.general = {
     # this would ensure any config included from nix in here will be ran after any provided by the `lze` spec
     # If we provided any from within either spec, anyway

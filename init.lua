@@ -512,6 +512,21 @@ nixInfo.lze.load {
     },
   },
   {
+    "pyright",
+    for_cat = "python",
+    lsp = {
+      filetypes = { "python" },
+      settings = {
+        python = {
+          analysis = {
+            autoSearchPaths = true,
+            useLibraryCodeForTypes = true,
+          }
+        }
+      }
+    }
+  },
+  {
     "nvim-treesitter",
     lazy = false,
     auto_enable = true,
