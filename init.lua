@@ -669,6 +669,16 @@ nixInfo.lze.load {
           -- Use a sub-list to run only the first available formatter
           -- javascript = { { "prettierd", "prettier" } },
         },
+        formatters = {
+          stylua = {
+            command = "stylua",
+            args = {
+              "--stdin-filepath", "$FILENAME",
+              "--search-parent-directories",
+              "-",
+            },
+          },
+        },
       })
 
       vim.keymap.set({ "n", "v" }, "<leader>FF", function()
