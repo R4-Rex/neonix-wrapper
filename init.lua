@@ -527,6 +527,19 @@ nixInfo.lze.load {
     }
   },
   {
+    "clangd",
+    for_cats = "c",
+    lsp = {
+      filetypes = { "c", "cpp", "objc", "objcpp", "cuda" },
+      settings = {
+        clangd = {
+          cmd = { "clangd" },
+        },
+      },
+    },
+
+  },
+  {
     "nvim-treesitter",
     lazy = false,
     auto_enable = true,
@@ -668,6 +681,7 @@ nixInfo.lze.load {
           python = nixInfo(nil, "settings", "cats", "python") and { "isort", "black" } or nil,
           -- Use a sub-list to run only the first available formatter
           -- javascript = { { "prettierd", "prettier" } },
+          c = nixInfo(nil, "settings", "cats", "c") and { "clang-format" } or nil,
         },
         formatters = {
           stylua = {

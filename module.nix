@@ -127,6 +127,15 @@ inputs:
       python3Packages.flake8
     ];
   };
+  config.specs.c = {
+    after = [ "general" ];
+    data = with pkgs.vimPlugins; [
+    ];
+    extraPackages = with pkgs; [
+      clang
+      clang-tools
+    ];
+  };
   config.specs.general = {
     # this would ensure any config included from nix in here will be ran after any provided by the `lze` spec
     # If we provided any from within either spec, anyway
