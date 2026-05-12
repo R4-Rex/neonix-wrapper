@@ -117,8 +117,10 @@ inputs:
     ];
   };
   config.specs.python = {
+    after = [ "general" ];
     data = null;
     extraPackages = with pkgs; [
+      python3
       pyright
       black
       python3Packages.isort
