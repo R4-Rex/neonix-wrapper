@@ -266,7 +266,7 @@ nixInfo.lze.load {
     auto_enable = true,
     colorscheme = "rose-pine",
   },
-    {
+  {
     "snacks.nvim",
     auto_enable = true,
     -- snacks makes a global, and then lazily loads itself
@@ -679,6 +679,16 @@ nixInfo.lze.load {
         })
       end, { desc = "[F]ormat [F]ile" })
     end,
+  },
+  {
+    "nvim-autopairs",
+    auto_enable = true,
+    event = "InsertEnter",
+    after = function(plugin)
+    require('nvim-autopairs').setup({
+      check_ts = true,
+    })
+  end
   },
   {
     "nvim-lint",

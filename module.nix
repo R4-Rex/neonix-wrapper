@@ -161,6 +161,7 @@ inputs:
       fidget-nvim
       nvim-lint
       conform-nvim
+      nvim-autopairs
       nvim-treesitter-textobjects
       # treesitter + grammars
       nvim-treesitter.withAllGrammars
