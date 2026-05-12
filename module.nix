@@ -136,6 +136,15 @@ inputs:
       clang-tools
     ];
   };
+  config.specs.java = {
+    after = [ "general" ];
+    data = with pkgs.vimPlugins; [
+      nvim-jdtls
+    ];
+    extraPackages = with pkgs; [
+      jdt-language-server
+    ];
+  };
   config.specs.general = {
     # this would ensure any config included from nix in here will be ran after any provided by the `lze` spec
     # If we provided any from within either spec, anyway
