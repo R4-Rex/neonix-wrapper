@@ -143,6 +143,7 @@ inputs:
     ];
     extraPackages = with pkgs; [
       jdt-language-server
+      google-java-format
     ];
   };
   config.specs.general = {

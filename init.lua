@@ -618,14 +618,13 @@ nixInfo.lze.load({
       settings = {
         jdtls = {
           cmd = { "jdtls" },
-          formatting = {
-            cmd = { "jdtls" },
-          },
         },
       },
     },
   },
+
   {
+
     "nvim-treesitter",
     lazy = false,
     auto_enable = true,
@@ -768,7 +767,7 @@ nixInfo.lze.load({
           -- Use a sub-list to run only the first available formatter
           -- javascript = { { "prettierd", "prettier" } },
           c = nixInfo(nil, "settings", "cats", "c") and { "clang-format" } or nil,
-          java = nixInfo(nil, "settings", "cats", "java") and { "jdtls" } or nil,
+          java = nixInfo(nil, "settings", "cats", "java") and { "google-java-format" } or nil,
         },
         formatters = {
           stylua = {
