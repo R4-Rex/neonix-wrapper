@@ -622,9 +622,21 @@ nixInfo.lze.load({
       },
     },
   },
-
   {
-
+    "bashls", -- this needs to be the name of the lsp, not just any name
+    for_cats = "bash",
+    lsp = {
+      filetypes = { "sh" },
+      settings = {
+        bash = {
+        },
+        formatting = {
+          cmd = { "shfmt" },
+        },
+      },
+    },
+  },
+  {
     "nvim-treesitter",
     lazy = false,
     auto_enable = true,
@@ -768,6 +780,7 @@ nixInfo.lze.load({
           -- javascript = { { "prettierd", "prettier" } },
           c = nixInfo(nil, "settings", "cats", "c") and { "clang-format" } or nil,
           java = nixInfo(nil, "settings", "cats", "java") and { "google-java-format" } or nil,
+          bash = nixInfo(nil, "settings", "cats", "bash") and { "shfmt" } or nil,
         },
         formatters = {
           stylua = {

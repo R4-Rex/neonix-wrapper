@@ -116,6 +116,17 @@ inputs:
       stylua
     ];
   };
+  config.specs.bash = {
+    after = [ "general" ];
+    lazy = true;
+    data = with pkgs.vimPlugins; [
+      nvim-treesitter-parsers.bash
+    ];
+    extraPackages = with pkgs; [
+      bash-language-server
+      shfmt
+      ];
+  };
   config.specs.python = {
     after = [ "general" ];
     data = null;
