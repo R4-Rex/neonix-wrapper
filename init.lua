@@ -628,8 +628,7 @@ nixInfo.lze.load({
     lsp = {
       filetypes = { "sh" },
       settings = {
-        bash = {
-        },
+        bash = {},
         formatting = {
           cmd = { "shfmt" },
         },
@@ -969,6 +968,7 @@ nixInfo.lze.load({
       require("fidget").setup({})
     end,
   },
+  { "nvim-web-devicons", opts = {} },
   {
     "lualine.nvim",
     auto_enable = true,
@@ -980,21 +980,21 @@ nixInfo.lze.load({
     after = function(plugin)
       require("lualine").setup({
         options = {
-          icons_enabled = false,
+          icons_enabled = true,
           theme = nixInfo("onedark_dark", "settings", "colorscheme"),
           component_separators = "|",
           section_separators = "",
         },
         sections = {
           lualine_c = {
-            { "filename", path = 1, status = false },
+            { "filename", path = 1, status = true },
           },
+          lualine_x = { "filetype" },
         },
         inactive_sections = {
           lualine_b = {
             { "filename", path = 3, status = true },
           },
-          lualine_x = { "filetype" },
         },
         tabline = {
           -- this is the thing that appears as the top-bar

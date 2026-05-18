@@ -187,6 +187,7 @@ inputs:
       blink-compat
       cmp-cmdline
       colorful-menu-nvim
+      nvim-web-devicons
       lualine-nvim
       gitsigns-nvim
       which-key-nvim
